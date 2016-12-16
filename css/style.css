@@ -49,7 +49,7 @@ label {
     width: 100% ! important;
 }
 .navbar-default {
-    background-color:#9932CC! important;
+    background-color:#4CCEAC! important;
     border-color:#6cbc35 ! important;
 }
 .navbar {
@@ -69,12 +69,12 @@ label {
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #fff;
-    background-color:#9932CC;
+    background-color:#4CCEAC;
 	border-bottom:2px solid #fff;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     color: #fff;
-    background-color:#9932CC;
+    background-color:#4CCEAC;
 	border-bottom:2px solid #fff;
 }
 .glyphicon {
@@ -140,14 +140,14 @@ nav.navbar.navbar-default {
     right: 3em;
     border: none;
     outline: none;
-    background: #553A99;
+    background: #FDFDFD;
     width: 100%;
     height: 40px;
     margin: 0;
     z-index: 10;
     padding: 5px 63px;
     font-size: 15px;
-    color: #ffffff;
+    color: #4CCEAC;
 }
 .sb-search-input::-webkit-input-placeholder {
 	color: #ffffff;
@@ -211,12 +211,12 @@ nav.navbar.navbar-default {
 }
 /*--*/
 .header {
-    background-color:#9932CC;
+    background-color:#4CCEAC;
     padding: 1.5em 0;
 }
 .details-1 {
     padding: 2em 0 1em;
-    background-color: rgb(192, 192, 192);
+    background-color: #ffffff;
 }
 .input-group {
     width: 100%;
@@ -232,7 +232,7 @@ nav.navbar.navbar-default {
     -o-transition: 0.3s;
     -webkit-transition: 0.3s;
     transition: 0.3s;
-    background-color: #ff;
+    background-color: #F7F7F8;
     border: none;
 	outline:none;
     font-size: 14px;
@@ -251,7 +251,7 @@ select#country {
     font-weight: 500;
     border: none;
     width: 100%;
-    background:#553a99;
+    background:#4CCEAC;
     padding: 9px 0px;
     outline: none;
 }
@@ -260,6 +260,7 @@ select#country {
 }
 input#datepicker, input#datepicker1 {
     padding: 10px 9px 10px 9px;
+    background-color: #F7F7F8;
     border: none;
     box-shadow: none;
     outline: none;
@@ -371,7 +372,7 @@ span {
 }
 .quick h5 {
     font-size: 2.2em;
-    color:#553a99;
+    color:#4CCEAC;
 }
 .quick h6 {
     font-size: 2em;
@@ -441,7 +442,7 @@ span {
     backface-visibility: hidden;
     -moz-osx-font-smoothing: grayscale;
     position: relative;
-    background: #6495ED;
+    background: #94CD67;
     -webkit-transition-property: color;
     transition-property: color;
     -webkit-transition-duration: 0.3s;
@@ -459,7 +460,7 @@ span {
   bottom: 0;
   left: 0;
   right: 0;
-  background:#553a99;
+  background:#4CCEAC;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
   -webkit-transform-origin: 50%;
@@ -871,7 +872,7 @@ div.register-bottom-grid {
   padding: 2em 0 0;
 }
 .details h3 {
-  color: #553A99;
+  color: #4CCEAC;
   font-size: 1.7em;
   font-weight: 500;
   margin-bottom: 1em;
@@ -892,7 +893,7 @@ div.register-bottom-grid {
     width: 37%;
 }
 .details-top h4 {
-  color: #553A99;
+  color: #4CCEAC;
   font-size: 1.3em;
   font-weight: 500;
   margin: 1em 0;
@@ -1144,8 +1145,8 @@ address {
 	cursor: pointer;
 	font-weight: 700;
 	margin: 20px 0 0 0px;
-	border: 1px solid #553a99;
-	background:#553a99;
+	border: 1px solid #4CCEAC;
+	background:#4CCEAC;
 	outline: none;
 	width: 100%;
 }
@@ -1673,7 +1674,7 @@ nav.navbar.navbar-default {
 }
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
     border-color: #9932CC;
-    background: #553A99;
+    background: #4CCEAC;
 }
 .navigation {
     margin: 0.5em 0 0;

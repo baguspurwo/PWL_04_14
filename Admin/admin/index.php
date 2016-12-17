@@ -77,7 +77,7 @@ tanggallengkap = namahari[hari] + ", " +tanggal + " " + namabulan[bulan] + " " +
           <ul class="nav navbar-nav side-nav">
             <li class=""><a href="data_kamar.php"><i class="fa fa-table"></i> Data Kamar</a></li>
             <li><a href="data_customer.php"><i class="fa fa-table"></i> Data Customer</a></li>
-            <li><a href="#"><i class="fa fa-table"></i> Data Type Kamar</a></li>
+            <li><a href="data_typekamar.php"><i class="fa fa-table"></i> Data Type Kamar</a></li>
             <li><a href="#"><i class="fa fa-edit"></i> Berita</a></li>
            
               </ul>

@@ -75,9 +75,9 @@ tanggallengkap = namahari[hari] + ", " +tanggal + " " + namabulan[bulan] + " " +
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
-            <li class="active"><a href=""><i class="fa fa-table"></i> Data Kamar</a></li>
+            <li ><a href="data_kamar.php"><i class="fa fa-table"></i> Data Kamar</a></li>
             <li><a href="data_customer.php"><i class="fa fa-table"></i> Data Customer</a></li>
-            <li><a href="data_typekamar.php"><i class="fa fa-table"></i> Data Type Kamar</a></li>
+            <li class="active"><a href="#"><i class="fa fa-table"></i> Data Type Kamar</a></li>
             <li><a href="#"><i class="fa fa-edit"></i> Berita</a></li>
            
               </ul>
@@ -170,7 +170,7 @@ $_SESSION['start_time'] = time();
           <div class="col-lg-12">
           
             <ol class="breadcrumb">
-              <li class="active"><i class="fa fa-table"></i> Data Kamar </li>
+              <li class="active"><i class="fa fa-table"></i> Data Type Kamar </li>
             </ol>
             <table width="900">
             <tr>
@@ -212,10 +212,10 @@ $_SESSION['start_time'] = time();
                   <table class="table table-bordered table-hover table-striped tablesorter">
                   
                       <tr>
-                        <th>Id Kamar<i class="fa fa-sort"></i></th>
-                        <th>ID Type<i class="fa fa-sort"></i></th>
-                        <th>Nama Ruang <i class="fa fa-sort"></i></th>
-                        <th>Status <i class="fa fa-sort"></i></th>
+                        <th>Id Type<i class="fa fa-sort"></i></th>
+                        <th>Nama Kamar<i class="fa fa-sort"></i></th>
+                        <th>Harga <i class="fa fa-sort"></i></th>
+                        <th>Fasilitas <i class="fa fa-sort"></i></th>
 
                       </tr>
                      <?php while($data=mysql_fetch_array($tampil))
@@ -236,7 +236,7 @@ $_SESSION['start_time'] = time();
                    </table>
                    </div>
                 <div class="text-right">
-                  <a href="tambah_kamar.php" class="btn btn-sm btn-warning">Tambah Data Kamar <i class="fa fa-arrow-circle-right"></i></a>
+                  <a href="tambah.php" class="btn btn-sm btn-warning">Tambah Data Type Kamar <i class="fa fa-arrow-circle-right"></i></a>
               
                 </div>
               </div> 

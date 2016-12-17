@@ -69,24 +69,17 @@ tanggallengkap = namahari[hari] + ", " +tanggal + " " + namabulan[bulan] + " " +
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Admin SI HOTEL</a>
+          <a class="navbar-brand" href="index.php">Admin SI HOTEL</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
+       <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
-            <li class="active"><a href="index.php"><i class="fa fa-dashboard"></i> Data Kamar</a></li>
-            <li><a href="tampilgajiaja.php"><i class="fa fa-bar-chart-o"></i> Data Custemer</a></li>
-            <li><a href="#"><i class="fa fa-table"></i> Data Type Kamar</a></li>
-            <li><a href="#"><i class="fa fa-edit"></i> Data Berita</a></li>
-            
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Laporan <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Laporan Gaji Perbulan</a></li>
-                <li><a href="#">Laporan Lembur Perbulan</a></li>
-                <li><a href="#">Laporan Tahunan</a></li>
-                <li><a href="#">Laporan Pembayaran Gaji</a></li>
+            <li ><a href="data_kamar.php"><i class="fa fa-table"></i> Data Kamar</a></li>
+            <li><a href="data_customer.php"><i class="fa fa-table"></i> Data Customer</a></li>
+            <li class="active"><a href="#"><i class="fa fa-table"></i> Data Type Kamar</a></li>
+            <li><a href="#"><i class="fa fa-edit"></i> Berita</a></li>
+           
               </ul>
             </li>
           </ul>
@@ -156,8 +149,7 @@ tanggallengkap = namahari[hari] + ", " +tanggal + " " + namabulan[bulan] + " " +
           </ul>
         </div><!-- /.navbar-collapse -->
       </nav>
-      <?php
-session_start();
+       <?php
 $timeout = 10; // Set timeout minutes
 $logout_redirect_url = "../index.html"; // Set logout URL
 
@@ -176,9 +168,9 @@ $_SESSION['start_time'] = time();
 
         <div class="row">
           <div class="col-lg-12">
-            <h1>Dashboard <small>Admin SI HOTEL</small></h1>
+          
             <ol class="breadcrumb">
-              <li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
+              <li class="active"><i class="fa fa-table"></i> Tambah Data Type Kamar</li>
             </ol>
             <table width="900">
             <tr>
@@ -190,7 +182,7 @@ $_SESSION['start_time'] = time();
             <br />
             <div class="alert alert-success alert-dismissable">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-             ID Ruang auto number jadi tidak perlu di isi, abaikan saja..
+             ID Type auto number jadi tidak perlu di isi, abaikan saja..
           </div>
         </div><!-- /.row -->
 <!--
@@ -210,7 +202,7 @@ $_SESSION['start_time'] = time();
         <div class="col-lg-12">
             <div class="panel panel-primary">
               <div class="panel-heading">
-                <h3 class="panel-title"><i class="fa fa-user"></i> Tambah Data Kamar </h3>
+                <h3 class="panel-title"><i class="fa fa-table"></i> Tambah Data Type Kamar </h3>
               </div>
               <div class="panel-body">
                  <div class="table-responsive">
@@ -218,20 +210,20 @@ $_SESSION['start_time'] = time();
     <form action="insert.php" method="post">
     <table class="table table-condensed">
     <tr>
-        <td><label for="kary_id">ID Ruang</label></td>
-        <td><input name="kary_id" type="text" class="form-control" id="kary_id" placeholder="ID Ruang" readonly/></td>
+        <td><label for="kary_id">ID Type</label></td>
+        <td><input name="kary_id" type="text" class="form-control" id="kary_id" placeholder="ID Type" readonly/></td>
       </tr>
       <tr>
-        <td><label for="kode_kar">ID Type</label></td>
-        <td><input name="kode_kar" type="option" class="form-control" id="kode_kar" placeholder="ID Type" required/></td>
+        <td><label for="kode_kar">Nama Kamar</label></td>
+        <td><input name="kode_kar" type="option" class="form-control" id="kode_kar" placeholder="Nama Kamar" required/></td>
       </tr>
       <tr>
-        <td><label for="nama_kar">Nama Ruang</label></td>
-        <td><input name="nama_kar" type="text" class="form-control" id="nama_kar" placeholder="Nama Ruang" required/></td>
+        <td><label for="nama_kar">Harga</label></td>
+        <td><input name="nama_kar" type="text" class="form-control" id="nama_kar" placeholder="Harga" required/></td>
       </tr>
       <tr>
-        <td><label for="alamat_kar">Status</label></td>
-        <td><input name="alamat_kar" type="text" class="form-control" id="alamat_kar" placeholder="Status" required/></td>
+        <td><label for="alamat_kar">Fasilitas</label></td>
+        <td><input name="alamat_kar" type="text" class="form-control" id="alamat_kar" placeholder="Fasilitas" required/></td>
       </tr>
       
       <tr>

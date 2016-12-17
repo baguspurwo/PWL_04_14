@@ -1,9 +1,9 @@
 <?php 
 session_start();
 if (empty($_SESSION['username'])){
-	echo "<script>alert('Anda belum mempunyai hak akses.'); window.location = '../index.html'</script>";	
+  header('location:../index.html'); 
 } else {
-	include "../koneksi.php";
+  include "../koneksi.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,9 +28,9 @@ if (empty($_SESSION['username'])){
 // 1 detik = 1000
 window.setTimeout("waktu()",1000);  
 function waktu() {   
-	var tanggal = new Date();  
-	setTimeout("waktu()",1000);  
-	document.getElementById("output").innerHTML = tanggal.getHours()+":"+tanggal.getMinutes()+":"+tanggal.getSeconds();
+  var tanggal = new Date();  
+  setTimeout("waktu()",1000);  
+  document.getElementById("output").innerHTML = tanggal.getHours()+":"+tanggal.getMinutes()+":"+tanggal.getSeconds();
 }
 </script>
 <script language="JavaScript">
@@ -46,12 +46,12 @@ var bulan = tgl.getMonth();
 var tahun = tgl.getFullYear();
 tanggallengkap = namahari[hari] + ", " +tanggal + " " + namabulan[bulan] + " " + tahun;
 
-	var popupWindow = null;
-	function centeredPopup(url,winName,w,h,scroll){
-	LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
-	TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
-	settings ='height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
-	popupWindow = window.open(url,winName,settings)
+  var popupWindow = null;
+  function centeredPopup(url,winName,w,h,scroll){
+  LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+  TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+  settings ='height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+  popupWindow = window.open(url,winName,settings)
 }
 </script>
     
@@ -75,11 +75,12 @@ tanggallengkap = namahari[hari] + ", " +tanggal + " " + namabulan[bulan] + " " +
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
-            <li><a href="data_kamar.php"><i class="fa fa-table"></i> Data Kamar</a></li>
+            <li ><a href="data_kamar.php"><i class="fa fa-table"></i> Data Kamar</a></li>
             <li class="active"><a href=""><i class="fa fa-table"></i> Data Customer</a></li>
-            <li><a href="#"><i class="fa fa-table"></i> Data Type Kamar</a></li>
+            <li ><a href="data_typekamar.php"><i class="fa fa-table"></i> Data Type Kamar</a></li>
             <li><a href="#"><i class="fa fa-edit"></i> Berita</a></li>
            
+              </ul>
             </li>
           </ul>
 
@@ -149,7 +150,6 @@ tanggallengkap = namahari[hari] + ", " +tanggal + " " + namabulan[bulan] + " " +
         </div><!-- /.navbar-collapse -->
       </nav>
       <?php
-session_start();
 $timeout = 10; // Set timeout minutes
 $logout_redirect_url = "../index.html"; // Set logout URL
 
@@ -168,7 +168,10 @@ $_SESSION['start_time'] = time();
 
         <div class="row">
           <div class="col-lg-12">
-            <h1>Data Penggajian<small> Karyawan</small></h1>
+          
+            <ol class="breadcrumb">
+              <li class="active"><i class="fa fa-table"></i> Data Customer </li>
+            </ol>
             <table width="900">
             <tr>
             <td width="250"><div class="Tanggal"><h4><script language="JavaScript">document.write(tanggallengkap);</script></div></h4></td> 
@@ -177,10 +180,10 @@ $_SESSION['start_time'] = time();
             </tr>
             </table>
             <br />
-            <!--<div class="alert alert-success alert-dismissable">
+            <div class="alert alert-success alert-dismissable">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-             Untuk cetak slip gaji silahkan klik tombol print..
-          </div>-->
+             Selamat Datang Di Halaman Admin SI HOTEL.. 
+          </div>
         </div><!-- /.row -->
 <!--
         <div class="row">
@@ -199,40 +202,39 @@ $_SESSION['start_time'] = time();
         <div class="col-lg-12">
             <div class="panel panel-primary">
               <div class="panel-heading">
-                <h3 class="panel-title"><i class="fa fa-user"></i> Data Penggajian Karyawan </h3> 
+                <h3 class="panel-title"><i class="fa fa-user"></i> Data Customer </h3> 
               </div>
               <div class="panel-body">
                  <div class="table-responsive">
                     <?php
-                    $tampil=mysql_query("SELECT karyawan.kode_kar, karyawan.nama_kar, karyawan.no_rek, karyawan.gaji_utama, tb_gaji.kode_gaji, 
-                    tb_gaji.uang_lembur, tb_gaji.total_gaji, tb_gaji.tgl_transfer, tb_gaji.jam_transfer FROM karyawan, tb_gaji WHERE karyawan.kary_id=tb_gaji.kary_id");
-                    $total=mysql_num_rows($tampil); ?>
+                    $tampil=mysql_query("select * from karyawan order by kary_id desc");
+                    ?>
                   <table class="table table-bordered table-hover table-striped tablesorter">
                   
                       <tr>
-                        <th>Kode<i class="fa fa-sort"></i></th>
-                        <th>Nama<i class="fa fa-sort"></i></th>
-                        <th>No Rek <i class="fa fa-sort"></i></th>
-                        <th>Kode Gaji <i class="fa fa-sort"></i></th>
-                        <th>Gaji Utama <i class="fa fa-sort"></i></th>
-                        <th>Uang_lembur <i class="fa fa-sort"></i></th>
-                        <th>Take Home Pay <i class="fa fa-sort"></i></th>
-                        <th>Tanggal Transfer <i class="fa fa-sort"></i></th>
-                        <th>Jam Transfer <i class="fa fa-sort"></i></th>
+                        <th>Id Pesan<i class="fa fa-sort"></i></th>
+                        <th>Id Type<i class="fa fa-sort"></i></th>
+                        <th>Jumlah <i class="fa fa-sort"></i></th>
+                        <th>Nama <i class="fa fa-sort"></i></th>
+                        <th>Alamat<i class="fa fa-sort"></i></th>
+                        <th>No KTP<i class="fa fa-sort"></i></th>
+                        <th>Tanggal Pesan <i class="fa fa-sort"></i></th>
+                        <th>Tanggal Order <i class="fa fa-sort"></i></th>
+                        <th>Email<i class="fa fa-sort"></i></th>
+                        <th>Telepon <i class="fa fa-sort"></i></th>
+                        <th>Biaya <i class="fa fa-sort"></i></th>
                       </tr>
                      <?php while($data=mysql_fetch_array($tampil))
                     { ?>
                     <tr>
-                    <td><?php echo $data['kode_kar'];?></td>
-                    <td><?php echo $data['nama_kar']; ?></a></td>
+                    <td><?php echo $data['kode_kar']; ?></td>
+                    <td><a href="gaji.php?hal=edit&kd=<?php echo $data['kary_id'];?>"><i class="fa fa-user"></i> <?php echo $data['nama_kar']; ?></a></td>
+                    <td><?php echo $data['alamat_kar']; ?></td>
                     <td><?php echo $data['no_rek']; ?></td>
-                    <td><?php echo $data['kode_gaji']; ?></td>
                     <td>Rp.<?php echo number_format($data['gaji_utama'],2,",",".");?></td>
-                    <td>Rp.<?php echo number_format($data['uang_lembur'],2,",",".");?></td>
-                    <td>Rp.<?php echo number_format($data['total_gaji'],2,",",".");?></td>
-                    <td><?php echo $data['tgl_transfer'];?></td>
-                    <td><?php echo $data['jam_transfer']; ?></td>
-                    </tr>
+                    <td><?php echo $data['gol_kar'];?></td>
+                    <td><a class="btn btn-sm btn-primary" href="edit.php?hal=edit&kd=<?php echo $data['kary_id'];?>"><i class="fa fa-edit"></i> Edit</a>
+                        <a class="btn btn-sm btn-danger" href="hapus.php?hal=hapus&kd=<?php echo $data['kary_id'];?>"><i class="fa fa-wrench"></i> Hapus</a></td></tr>
                  <?php   
               }
               ?>

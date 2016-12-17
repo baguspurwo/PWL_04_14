@@ -1,9 +1,9 @@
 <?php 
 session_start();
 if (empty($_SESSION['username'])){
-  header('location:../index.html'); 
+	echo "<script>alert('Anda belum mempunyai hak akses.'); window.location = '../index.html'</script>";	
 } else {
-  include "../koneksi.php";
+	include "../koneksi.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +13,7 @@ if (empty($_SESSION['username'])){
     <meta name="description" content="Aplikasi Penggajian Karyawan">
     <meta name="author" content="Hakko Bio Richard">
 
-    <title>Welcome To Administrator</title>
+    <title>Welcome Admin SI HOTEL</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -28,9 +28,9 @@ if (empty($_SESSION['username'])){
 // 1 detik = 1000
 window.setTimeout("waktu()",1000);  
 function waktu() {   
-  var tanggal = new Date();  
-  setTimeout("waktu()",1000);  
-  document.getElementById("output").innerHTML = tanggal.getHours()+":"+tanggal.getMinutes()+":"+tanggal.getSeconds();
+	var tanggal = new Date();  
+	setTimeout("waktu()",1000);  
+	document.getElementById("output").innerHTML = tanggal.getHours()+":"+tanggal.getMinutes()+":"+tanggal.getSeconds();
 }
 </script>
 <script language="JavaScript">
@@ -46,12 +46,12 @@ var bulan = tgl.getMonth();
 var tahun = tgl.getFullYear();
 tanggallengkap = namahari[hari] + ", " +tanggal + " " + namabulan[bulan] + " " + tahun;
 
-  var popupWindow = null;
-  function centeredPopup(url,winName,w,h,scroll){
-  LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
-  TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
-  settings ='height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
-  popupWindow = window.open(url,winName,settings)
+	var popupWindow = null;
+	function centeredPopup(url,winName,w,h,scroll){
+	LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+	TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+	settings ='height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+	popupWindow = window.open(url,winName,settings)
 }
 </script>
     
@@ -75,12 +75,10 @@ tanggallengkap = namahari[hari] + ", " +tanggal + " " + namabulan[bulan] + " " +
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
-            <li class="active"><a href=""><i class="fa fa-table"></i> Data Kamar</a></li>
+            <li class="active"><a href="data_kamar.php"><i class="fa fa-table"></i> Data Kamar</a></li>
             <li><a href="data_customer.php"><i class="fa fa-table"></i> Data Customer</a></li>
             <li><a href="data_typekamar.php"><i class="fa fa-table"></i> Data Type Kamar</a></li>
             <li><a href="#"><i class="fa fa-edit"></i> Berita</a></li>
-           
-              </ul>
             </li>
           </ul>
 
@@ -133,23 +131,23 @@ tanggallengkap = namahari[hari] + ", " +tanggal + " " + namabulan[bulan] + " " +
               </ul>
             </li>-->
             <li class="dropdown user-dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Hallo,
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
               <?php
               echo $_SESSION['username'];
                ?>
               <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#"><i class="fa fa-user"></i> Profil</a></li>
-                <li><a href="#"><i class="fa fa-envelope"></i> Pesan Masuk <span class="badge">7</span></a></li>
-                <li><a href="#"><i class="fa fa-gear"></i> Pengaturan </a></li>
+                <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+                <li><a href="#"><i class="fa fa-envelope"></i> Inbox <span class="badge">7</span></a></li>
+                <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
                 <li class="divider"></li>
-                <li><a href="../logout.php" onclick="return confirm('Apakah anda akan keluar?');"><i class="fa fa-power-off"></i> Keluar APeK</a></li>
+                <li><a href="../logout.php" onclick="return confirm('Apakah anda akan keluar?');"><i class="fa fa-power-off"></i> Log Out</a></li>
               </ul>
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </nav>
-      <?php
+     <?php
 $timeout = 10; // Set timeout minutes
 $logout_redirect_url = "../index.html"; // Set logout URL
 
@@ -168,9 +166,9 @@ $_SESSION['start_time'] = time();
 
         <div class="row">
           <div class="col-lg-12">
-          
+         
             <ol class="breadcrumb">
-              <li class="active"><i class="fa fa-table"></i> Data Kamar </li>
+              <li class="active"><i class="fa fa-table"></i> Tambah Data Kamar</li>
             </ol>
             <table width="900">
             <tr>
@@ -182,7 +180,7 @@ $_SESSION['start_time'] = time();
             <br />
             <div class="alert alert-success alert-dismissable">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-             Selamat Datang Di Halaman Admin SI HOTEL.. 
+             ID Ruang auto number jadi tidak perlu di isi, abaikan saja..
           </div>
         </div><!-- /.row -->
 <!--
@@ -202,48 +200,44 @@ $_SESSION['start_time'] = time();
         <div class="col-lg-12">
             <div class="panel panel-primary">
               <div class="panel-heading">
-                <h3 class="panel-title"><i class="fa fa-user"></i> Data Kamar </h3> 
+                <h3 class="panel-title"><i class="fa fa-user"></i> Tambah Data Kamar </h3>
               </div>
               <div class="panel-body">
                  <div class="table-responsive">
-                    <?php
-                    $tampil=mysql_query("select * from karyawan order by kary_id desc");
-                    ?>
-                  <table class="table table-bordered table-hover table-striped tablesorter">
                   
-                      <tr>
-                        <th>Id Kamar<i class="fa fa-sort"></i></th>
-                        <th>ID Type<i class="fa fa-sort"></i></th>
-                        <th>Nama Ruang <i class="fa fa-sort"></i></th>
-                        <th>Status <i class="fa fa-sort"></i></th>
-
-                      </tr>
-                     <?php while($data=mysql_fetch_array($tampil))
-                    { ?>
-                    <tr>
-                    <td><?php echo $data['kode_kar']; ?></td>
-                    <td><a href="gaji.php?hal=edit&kd=<?php echo $data['kary_id'];?>"><i class="fa fa-user"></i> <?php echo $data['nama_kar']; ?></a></td>
-                    <td><?php echo $data['alamat_kar']; ?></td>
-                    <td><?php echo $data['no_rek']; ?></td>
-                    <td>Rp.<?php echo number_format($data['gaji_utama'],2,",",".");?></td>
-                    <td><?php echo $data['gol_kar'];?></td>
-                    <td><a class="btn btn-sm btn-primary" href="edit.php?hal=edit&kd=<?php echo $data['kary_id'];?>"><i class="fa fa-edit"></i> Edit</a>
-                        <a class="btn btn-sm btn-danger" href="hapus.php?hal=hapus&kd=<?php echo $data['kary_id'];?>"><i class="fa fa-wrench"></i> Hapus</a></td></tr>
-                 <?php   
-              }
-              ?>
-                   </tbody>
-                   </table>
+    <form action="insert.php" method="post">
+    <table class="table table-condensed">
+    <tr>
+        <td><label for="kary_id">ID Ruang</label></td>
+        <td><input name="kary_id" type="text" class="form-control" id="kary_id" placeholder="ID Ruang" readonly/></td>
+      </tr>
+      <tr>
+        <td><label for="kode_kar">ID Type</label></td>
+        <td><input name="kode_kar" type="option" class="form-control" id="kode_kar" placeholder="ID Type" required/></td>
+      </tr>
+      <tr>
+        <td><label for="nama_kar">Nama Ruang</label></td>
+        <td><input name="nama_kar" type="text" class="form-control" id="nama_kar" placeholder="Nama Ruang" required/></td>
+      </tr>
+      <tr>
+        <td><label for="alamat_kar">Status</label></td>
+        <td><input name="alamat_kar" type="text" class="form-control" id="alamat_kar" placeholder="Status" required/></td>
+      </tr>
+      
+      <tr>
+        <td><input type="submit" value="Simpan Data"  class="btn btn-sm btn-primary"/>&nbsp;<a href="index.php" class="btn btn-sm btn-primary">Kembali</a></td>
+        </tr>
+    </table>
+    </form>
                    </div>
                 <div class="text-right">
-                  <a href="tambah_kamar.php" class="btn btn-sm btn-warning">Tambah Data Kamar <i class="fa fa-arrow-circle-right"></i></a>
+                  <a href="#"  data-toggle="tooltip" class="tip-bottom" data-original-title="Tooltip Dibawah">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
               
                 </div>
               </div> 
             </div>
           </div>
         </div><!-- /.row --> 
-
       </div><!-- /#page-wrapper -->
 
     </div><!-- /#wrapper -->

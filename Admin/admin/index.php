@@ -25,7 +25,7 @@ if (empty($_SESSION['username'])){
     <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
     
     <script type="text/javascript">
-// 1 detik = 1000
+// 1 detik = 10000000000000000000000000000
 window.setTimeout("waktu()",1000);  
 function waktu() {   
 	var tanggal = new Date();  

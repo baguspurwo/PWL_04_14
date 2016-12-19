@@ -242,7 +242,7 @@ $_SESSION['start_time'] = time();
               </div> 
             </div>
           </div>
-        </div><!-- /.row --> 
+        </div><!-- /.row baru--> 
 
       </div><!-- /#page-wrapper -->
 

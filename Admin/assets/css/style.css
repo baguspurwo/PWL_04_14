@@ -1,0 +1,43 @@
+body{
+	background-image:url(../img/img_.jpg);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+.transparan{
+	background:#000;opacity:0.8;filter:alpha(opacity=40);
+}
+.form-login{
+    margin-top: 13%;
+}
+.outter-form-login {
+    padding: 20px;
+    background: #add8e6;
+    position: relative;
+    border-radius: 5px;
+}
+.logo-login {
+    position: absolute;
+    font-size: 35px;
+    background: #8A2BE2;
+    color: #FFFFFF;
+    padding: 10px 18px;
+    top: -40px;
+    border-radius: 50%;
+    left: 40%;
+}
+.inner-login .form-control {
+    background: #D3D3D3;
+}
+h3.title-login {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.forget {
+    margin-top: 20px;
+    color: #ADADAD;
+}
+.btn-custom-green {
+    background: #8A2BE2;
+    color: #FFF;
+}

@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="form-group" style="padding-bottom: 20px;">
-                  <label for="Modal Name">Id Type</label>
+                  <label for="Modal Name">Id Tipe</label>
                     <input type="hidden" name="id_pesan"  class="form-control" value="<?php echo $r['id_pesan']; ?>" />
             <input type="text" name="id_type"  class="form-control" value="<?php echo $r['id_type']; ?>"/>
                 </div>

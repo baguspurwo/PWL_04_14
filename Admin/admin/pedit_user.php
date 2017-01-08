@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="form-group" style="padding-bottom: 20px;">
-                  <label for="Modal Name">status</label>
+                  <label for="Modal Name">Status</label>
                     <input type="hidden" name="id_user"  class="form-control" value="<?php echo $r['id_user']; ?>" />
             <input type="text" name="status"  class="form-control" value="<?php echo $r['status']; ?>"/>
                 </div>

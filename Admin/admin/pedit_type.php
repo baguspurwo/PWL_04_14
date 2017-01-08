@@ -17,7 +17,7 @@
         	<form action="edit_type.php" name="modal_popup" enctype="multipart/form-data" method="POST">
 
                 <div class="form-group" style="padding-bottom: 20px;">
-                  <label for="Modal Name">Id Type</label>
+                  <label for="Modal Name">Id Tipe</label>
                     <input type="hidden" name="id_type"  class="form-control" value="<?php echo $r['id_type']; ?>" />
             <input type="text" name="id_type"  class="form-control" value="<?php echo $r['id_type']; ?>"/>
                 </div>
